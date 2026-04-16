@@ -16,8 +16,9 @@ const Categories = () => {
             <h2>Популярні напрямки</h2>
             <div className="categories-grid">
                 {categories.map((cat, index) => (
-                    <Link key={index} to={`/category/${cat.name}`} className="category-card" style={{ display: 'block' }}>
-                        {cat.icon} {cat.name}
+                    <Link key={index} to={`/category/${encodeURIComponent(cat.name)}`} className="category-card category-card-flex">
+                        <span className="category-icon">{cat.icon}</span>
+                        <span className="category-label">{cat.name}</span>
                     </Link>
                 ))}
             </div>
